@@ -10,20 +10,39 @@
     :root { font-family: Inter, "Segoe UI", Arial, sans-serif; color: #202b26; background: #f4f1e9; }
     * { box-sizing: border-box; }
     body { min-height: 100vh; margin: 0; display: grid; place-items: center; padding: 2rem; }
-    main { width: min(760px, 100%); }
+    main { width: min(900px, 100%); }
     p { color: #536359; line-height: 1.7; }
     .label { color: #417054; text-transform: uppercase; letter-spacing: .08em; font-size: .75rem; }
     h1 { margin: 1rem 0; font-size: clamp(3rem, 9vw, 7rem); letter-spacing: -.065em; line-height: .96; }
-    a { display: inline-block; margin-top: 1.5rem; padding: 1rem 1.25rem; border-radius: 4px; color: #fff; background: #202b26; text-decoration: none; }
+    h2 { margin: 0 0 .75rem; font-size: 1.35rem; letter-spacing: -.025em; }
+    .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .project { display: flex; flex-direction: column; align-items: flex-start; min-height: 210px; padding: 1.5rem; border: 1px solid #d6dace; border-radius: 4px; background: #faf8f2; }
+    .project.atm { background: #dfe9d5; }
+    .project p { margin-bottom: 1.25rem; }
+    a { display: inline-block; margin-top: auto; padding: 1rem 1.25rem; border-radius: 4px; color: #fff; background: #202b26; text-decoration: none; }
     a:focus-visible { outline: 3px solid #9c661d; outline-offset: 5px; }
+    @media (max-width: 650px) { .projects { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <main>
     <p class="label">Wolfgang Siegert · Leipzig</p>
     <h1>Frontend.<br>Mit Verstand.</h1>
-    <p>Diese Domain ist die gemeinsame Basis für meine Projekte. Mein CV und Developer-Portfolio findest du im Bereich Portfolio.</p>
-    <a href="./portfolio/">Portfolio öffnen →</a>
+    <p>Diese Domain ist die gemeinsame Basis für mein Developer-Portfolio und meine eigenen Showcase-Projekte.</p>
+    <div class="projects">
+      <section class="project" aria-labelledby="portfolio-title">
+        <p class="label">CV & Projekte</p>
+        <h2 id="portfolio-title">Developer-Portfolio</h2>
+        <p>Erfahrung, Skills, Projekte und mein beruflicher Weg.</p>
+        <a href="./portfolio/">Portfolio öffnen →</a>
+      </section>
+      <section class="project atm" aria-labelledby="atm-title">
+        <p class="label">Laravel Showcase</p>
+        <h2 id="atm-title">LERN-Bank · Mein Geldautomat</h2>
+        <p>Eine interaktive Geldautomaten-Simulation mit Laravel, Vue und TypeScript.</p>
+        <a href="./atm/">Lernbank ausprobieren →</a>
+      </section>
+    </div>
   </main>
 </body>
 </html>
