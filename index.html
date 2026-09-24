@@ -16,10 +16,9 @@
     .label { color: #417054; text-transform: uppercase; letter-spacing: .08em; font-size: .75rem; }
     h1 { margin: 1rem 0; font-size: clamp(3rem, 9vw, 7rem); letter-spacing: -.065em; line-height: .96; }
     h2 { margin: 0 0 .75rem; font-size: 1.35rem; letter-spacing: -.025em; }
-    .projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
     .project { display: flex; flex-direction: column; align-items: flex-start; min-height: 210px; padding: 1.5rem; border: 1px solid #d6dace; border-radius: 4px; background: #faf8f2; }
     .project.atm { background: #dfe9d5; }
-    .project.vue { background: #e1e8fa; }
     .project p { margin-bottom: 1.25rem; }
     a { display: inline-block; margin-top: auto; padding: 1rem 1.25rem; border-radius: 4px; color: #fff; background: #202b26; text-decoration: none; }
     a:focus-visible { outline: 3px solid #9c661d; outline-offset: 5px; }
@@ -38,12 +37,6 @@
         <h2 id="portfolio-title">Developer-Portfolio</h2>
         <p>Erfahrung, Skills, Projekte und mein beruflicher Weg.</p>
         <a href="./portfolio/">Portfolio öffnen →</a>
-      </section>
-      <section class="project vue" aria-labelledby="vue-title">
-        <p class="label">Vue Showcase · Alternative</p>
-        <h2 id="vue-title">Portfolio horizontal</h2>
-        <p>Dieselben Inhalte als experimentelle, horizontal navigierte Vue-Variante.</p>
-        <a href="./portfolio-vue/">Showcase entdecken →</a>
       </section>
       <section class="project atm" aria-labelledby="atm-title">
         <p class="label">Laravel Showcase</p>
