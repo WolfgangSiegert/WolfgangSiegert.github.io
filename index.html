@@ -11,19 +11,23 @@
     :root { font-family: Inter, "Segoe UI", Arial, sans-serif; color: #202b26; background: #f4f1e9; }
     * { box-sizing: border-box; }
     body { min-height: 100vh; margin: 0; display: grid; place-items: center; padding: 2rem; }
-    main { width: min(900px, 100%); }
+    main { width: min(1120px, 100%); }
     p { color: #536359; line-height: 1.7; }
     .label { color: #417054; text-transform: uppercase; letter-spacing: .08em; font-size: .75rem; }
     h1 { margin: 1rem 0; font-size: clamp(3rem, 9vw, 7rem); letter-spacing: -.065em; line-height: .96; }
     h2 { margin: 0 0 .75rem; font-size: 1.35rem; letter-spacing: -.025em; }
-    .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
-    .project { display: flex; flex-direction: column; align-items: flex-start; min-height: 210px; padding: 1.5rem; border: 1px solid #d6dace; border-radius: 4px; background: #faf8f2; }
+    .projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .project { display: flex; min-width: 0; flex-direction: column; align-items: stretch; overflow: hidden; border: 1px solid #d6dace; border-radius: 4px; background: #faf8f2; }
     .project.atm { background: #dfe9d5; }
+    .project.joinsplit { background: #ebe7fa; }
+    .project img { display: block; width: 100%; height: 155px; object-fit: cover; object-position: top; border-bottom: 1px solid #d6dace; }
+    .project-copy { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 1.35rem; }
     .project p { margin-bottom: 1.25rem; }
     a { display: inline-block; margin-top: auto; padding: 1rem 1.25rem; border-radius: 4px; color: #fff; background: #202b26; text-decoration: none; }
     a:focus-visible { outline: 3px solid #9c661d; outline-offset: 5px; }
     .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-    @media (max-width: 650px) { .projects { grid-template-columns: 1fr; } }
+    @media (max-width: 850px) { .projects { grid-template-columns: 1fr; } .project { display: grid; grid-template-columns: minmax(180px, 38%) 1fr; } .project img { height: 100%; min-height: 240px; border-right: 1px solid #d6dace; border-bottom: 0; } }
+    @media (max-width: 600px) { body { padding: 1.2rem; } .project { display: flex; } .project img { height: 155px; min-height: 0; border-right: 0; border-bottom: 1px solid #d6dace; } }
   </style>
 </head>
 <body>
@@ -33,16 +37,31 @@
     <p>Diese Domain ist die gemeinsame Basis für mein Developer-Portfolio und meine eigenen Showcase-Projekte.</p>
     <div class="projects">
       <section class="project" aria-labelledby="portfolio-title">
-        <p class="label">Hauptansicht · CV & Projekte</p>
-        <h2 id="portfolio-title">Developer-Portfolio</h2>
-        <p>Erfahrung, Skills, Projekte und mein beruflicher Weg.</p>
-        <a href="./portfolio/">Portfolio öffnen →</a>
+        <img src="./assets/projects/portfolio.jpg" width="1280" height="720" alt="Startseite des Developer-Portfolios" loading="eager">
+        <div class="project-copy">
+          <p class="label">Hauptansicht · CV & Projekte</p>
+          <h2 id="portfolio-title">Developer-Portfolio</h2>
+          <p>Erfahrung, Skills, Projekte und mein beruflicher Weg.</p>
+          <a href="./portfolio/">Portfolio öffnen →</a>
+        </div>
       </section>
       <section class="project atm" aria-labelledby="atm-title">
-        <p class="label">Laravel Showcase</p>
-        <h2 id="atm-title">LERN-Bank · Mein Geldautomat</h2>
-        <p>Eine interaktive Geldautomaten-Simulation mit Laravel, Vue und TypeScript.</p>
-        <a href="./atm/" target="_blank" rel="noopener noreferrer">Lernbank ausprobieren →<span class="sr-only"> (öffnet einen neuen Tab)</span></a>
+        <img src="./assets/projects/lern-bank.jpg" width="1280" height="720" alt="Startansicht der LERN-Bank mit Geldautomaten-Simulation" loading="lazy">
+        <div class="project-copy">
+          <p class="label">Laravel Showcase</p>
+          <h2 id="atm-title">LERN-Bank · Mein Geldautomat</h2>
+          <p>Eine interaktive Geldautomaten-Simulation mit Laravel, Vue und TypeScript.</p>
+          <a href="./atm/" target="_blank" rel="noopener noreferrer">Lernbank ausprobieren →<span class="sr-only"> (öffnet einen neuen Tab)</span></a>
+        </div>
+      </section>
+      <section class="project joinsplit" aria-labelledby="joinsplit-title">
+        <img src="./assets/projects/joinsplit.jpg" width="1280" height="720" alt="Gruppenübersicht der JoinSplit-Webanwendung" loading="lazy">
+        <div class="project-copy">
+          <p class="label">Full-Stack Showcase</p>
+          <h2 id="joinsplit-title">JoinSplit</h2>
+          <p>Gemeinsame Ausgaben erfassen, aufteilen und transparent ausgleichen.</p>
+          <a href="https://joinsplit.tiny-bits.org/" target="_blank" rel="noopener noreferrer">JoinSplit öffnen →<span class="sr-only"> (öffnet einen neuen Tab)</span></a>
+        </div>
       </section>
     </div>
   </main>
